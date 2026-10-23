@@ -1,0 +1,10 @@
+{
+	"id": "tonguesking.dusk",
+	"name": "Dusk",
+	"version": "0.1.0",
+	"author": "tonguesking",
+	"description": "Warm twilight theme family: a soft rose-on-paper light theme and a deep plum dark theme, both WCAG AA for text.",
+	"theme": {
+		"files": ["theme.json", "theme-dark.json"]
+	}
+}
