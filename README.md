@@ -79,7 +79,7 @@ https://github.com/tonguesking/theme-dusk/releases/download/v0.1.0/tonguesking.d
 ### 启用主题
 
 1. 打开桌面端 **设置 → 外观**。
-2. 在亮色主题里选 **Dusk**，在暗色主题里选 **Dusk（theme-dark）**。
+2. 亮色主题选 Dusk 的浅色版（`tonguesking.dusk`），暗色主题选 Dusk 的深色版（`tonguesking.dusk:theme-dark`）。
 3. 深浅模式选"跟随系统"时，两个主题会跟着系统自动切换。
 
 自定义主题生效期间，强调色（accent）设置不起作用，看到的颜色都由主题决定。关掉主题后，强调色设置会恢复。
@@ -119,10 +119,9 @@ npm run pack
 ```
 
 它会依次完成这些事：
-1. 用 `@polycreator/plugin-manifest` 校验 manifest 和两个主题文件。
-2. 检查颜色变量是否齐全，以及文字与背景的对比度。
-3. 按 `theme.files` 的顺序对主题文件计算 sha256，写入 `integrity`。
-4. 生成 3 个 Release 附件：`tonguesking.dusk.zip`、`tonguesking.dusk-<version>.zip` 和 `manifest.json`。
+1. 基本校验：manifest 的 `id` 和 `theme.files`，每个主题文件都要有 `colors`。
+2. 按 `theme.files` 的顺序对主题文件计算 sha256，写入 `integrity`。
+3. 生成 3 个 Release 附件：`tonguesking.dusk.zip`、`tonguesking.dusk-<version>.zip` 和 `manifest.json`。
 
 ### 发布新版本
 
@@ -150,11 +149,11 @@ You need the PolyCreator desktop app first: <https://polycreator.si/download>.
 
 ### Enable
 
-Go to **Settings → Appearance**. Pick **Dusk** as the light theme and **Dusk (theme-dark)** as the dark theme. While a custom theme is active, the accent color setting is ignored.
+Go to **Settings → Appearance**. Pick Dusk's light theme (`tonguesking.dusk`) for light mode and its dark theme (`tonguesking.dusk:theme-dark`) for dark mode. While a custom theme is active, the accent color setting is ignored.
 
 ### Build and release
 
-Run `npm run pack`, which validates, computes integrity and writes `dist/`. Bump `version`, tag `vX.Y.Z`, and attach the 3 files in `dist/` to a GitHub Release. The marketplace picks up new tags automatically.
+Run `npm run pack`, which does basic checks, computes integrity and writes `dist/`. Bump `version`, tag `vX.Y.Z`, and attach the 3 files in `dist/` to a GitHub Release. The marketplace picks up new tags automatically.
 
 ---
 
